@@ -1,14 +1,11 @@
-import { useState } from "react";
 import "./TextEnter.css";
 
 const TextEnter = (props) => {
+  const placeholderModificada = props.placeholder;
 
-const [] = useState('')
-
-    const aoDigitado = (evento) => {
-    valor = evento.target.value
-    console.log(valor)
-  }
+  const aoDigitado = (evento) => {
+    props.aoAlterado(evento.target.value)
+  };
 
   return (
     <div className="text-enter">
@@ -17,8 +14,9 @@ const [] = useState('')
         onChange={aoDigitado}
         required={props.obrigatorio}
         id="Nome"
-        placeholder={`${props.placeholder}...`}
+        placeholder={`${placeholderModificada}...`}
         type="text"
+        value={props.valor}
       />
     </div>
   );
