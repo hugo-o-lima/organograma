@@ -1,9 +1,13 @@
+import { useState } from "react";
 import "./TextEnter.css";
 
 const TextEnter = (props) => {
 
-const aoDigitado = (evento) => {
-      console.log(evento.target.value)
+const [] = useState('')
+
+    const aoDigitado = (evento) => {
+    valor = evento.target.value
+    console.log(valor)
   }
 
   return (
