@@ -4,12 +4,6 @@ import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
 import { useState } from "react";
 
-const Formulario = () => {
-  const [nome, setNome] = useState("");
-  const [funcao, setFuncao] = useState("");
-  const [imagem, setImagem] = useState("");
-  const [time, setTime] = useState("");
-
   const times = [
     "Programador",
     "Estudante",
@@ -23,6 +17,12 @@ const Formulario = () => {
   const aoSalvar = (evento) => {
     evento.preventDefault();
     console.log("Submetido");
+    props.aoCadastro({
+      nome,
+      funcao,
+      imagem,
+      time
+    })
   };
 
   return (
