@@ -4,15 +4,12 @@ import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
 import { useState } from "react";
 
-  const times = [
-    "Programador",
-    "Estudante",
-    "Desempregado",
-    "Engenheiro",
-    "Jogador",
-    "Gui CC",
-    "Gestor",
-  ];
+const Formulario = (props) => {
+  const [nome, setNome] = useState("");
+  const [funcao, setFuncao] = useState("");
+  const [imagem, setImagem] = useState("");
+  const [time, setTime] = useState("");
+
 
   const aoSalvar = (evento) => {
     evento.preventDefault();
@@ -50,7 +47,7 @@ import { useState } from "react";
           aoAlterado={(valor) => setImagem(valor)}
         />
         <ListaSuspensa
-          itens={times}
+          itens={props.times}
           label="Time"
           obrigatorio={true}
           valor={time}
